@@ -52,7 +52,7 @@ function qrRead() {
                 video.pause();
                 video.srcObject.getTracks().forEach(track => track.stop());
                 drawRect(code.location);
-                // msg.classList.add('hidden');
+                msg.classList.add('hidden');
                 canvas.classList.add('hidden');
                 axios.post('/entry/admission', {
                     event_id: data.event.id,
