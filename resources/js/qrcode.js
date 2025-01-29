@@ -77,6 +77,7 @@ function qrRead() {
                     })
                     .catch((error) => {
                         console.error(error);
+                        msg.innerHTML = error;
                     });
             } else {
                 msg.innerHTML = 'QRコードが見つかりませんでした。';
