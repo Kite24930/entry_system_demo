@@ -63,13 +63,13 @@ function qrRead() {
                         console.log(response.data);
                         if (response.data.check) {
                             dataBox.classList.remove('hidden');
-                            eventName.innerHTML = response.data.event['name'];
+                            eventName.innerHTML = response.data.event.name;
                             eventDate.innerHTML = response.data.event.date;
                             eventTime.innerHTML = response.data.event.start_time + ' 〜 ' + response.data.event.end_time;
                             eventLocation.innerHTML = response.data.event.location;
                             eventDescription.innerHTML = response.data.event.description;
                             eventId.value = response.data.event.id;
-                            entryId.value = response.data.entry_id;
+                            entryId.value = response.data.entry.id;
                             msg.classList.add('hidden');
                         } else {
                             msg.innerHTML = '参加申し込みが見つかりませんでした。';

@@ -20,7 +20,7 @@ class EntryQrcodeController extends Controller
         if ($entry) {
             $check = true;
         }
-        return ['check' => $check, 'event' => $event, 'entry' => $entry, 'entry_id' => $entry->id];
+        return ['check' => $check, 'event' => $event, 'entry' => $entry];
     }
 
     public function store(Request $request) {
