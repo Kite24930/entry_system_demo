@@ -23,7 +23,7 @@ class EntryQrcodeController extends Controller
     }
 
     public function store(Request $request) {
-        $entry = Entry::find($request->entry_id);
+        $entry = Entry::where('event_id', $request->data->event->id)->where('user_id', $request->user_id)->first();
         $entry->is_entry = true;
         $entry->save();
         return redirect()->route('admission.already', ['event_id' => $request->event_id]);
