@@ -14,6 +14,9 @@ let eventId = document.getElementById('event-id');
 let entryId = document.getElementById('entry-id');
 let csrfToken = document.getElementById('csrf-token').value;
 let userId = document.getElementById('user-id').value;
+let UserName = document.getElementById('user-name');
+let UeerBelong = document.getElementById('user-belong');
+let UserPost = document.getElementById('user-post');
 
 function qrRead() {
     let video = document.createElement('video');
@@ -68,6 +71,9 @@ function qrRead() {
                             eventTime.innerHTML = response.data.event.start_time + ' 〜 ' + response.data.event.end_time;
                             eventLocation.innerHTML = response.data.event.location;
                             eventDescription.innerHTML = response.data.event.description;
+                            UserName.innerHTML = response.data.entry.user_name;
+                            UeerBelong.innerHTML = response.data.entry.user_belong_to;
+                            UserPost.innerHTML = response.data.entry.user_post;
                             eventId.value = response.data.event.id;
                             entryId.value = response.data.entry.id;
                             msg.classList.add('hidden');

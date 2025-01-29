@@ -46,6 +46,24 @@
                             <div id="event-description" class="font-bold text-lg pl-2"></div>
                         </div>
 
+                        <!-- User Belong to -->
+                        <div class="w-full max-w-xl">
+                            <x-input-label for="name" :value="__('User Belong to')" />
+                            <div id="user-belong" class="font-bold text-lg pl-2"></div>
+                        </div>
+
+                        <!-- User Post -->
+                        <div class="w-full max-w-xl">
+                            <x-input-label for="name" :value="__('User Post')" />
+                            <div id="user-post" class="font-bold text-lg pl-2"></div>
+                        </div>
+
+                        <!-- User Name -->
+                        <div class="w-full max-w-xl">
+                            <x-input-label for="name" :value="__('User Name')" />
+                            <div id="user-name" class="font-bold text-lg pl-2"></div>
+                        </div>
+
                         <!-- Event Admission -->
                         <div class="w-full max-w-xl flex justify-center">
                             <form action="{{ route('admission.store') }}" method="POST">
