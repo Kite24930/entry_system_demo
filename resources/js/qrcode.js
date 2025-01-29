@@ -46,7 +46,7 @@ function qrRead() {
             });
             if (code) {
                 // msg.innerHTML = code.data;
-                msg.innerHTML = '読み取り完了';
+                // msg.innerHTML = '読み取り完了';
                 let data = JSON.parse(code.data);
                 console.log(data);
                 video.pause();
@@ -54,6 +54,11 @@ function qrRead() {
                 drawRect(code.location);
                 // msg.classList.add('hidden');
                 canvas.classList.add('hidden');
+                msg.innerHTML = {
+                    data: data,
+                    user_id: userId,
+                    _token: csrfToken
+                };
                 axios.post('/entry/admission/success', {
                     data: data,
                     user_id: userId,
