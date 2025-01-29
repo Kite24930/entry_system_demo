@@ -55,7 +55,7 @@ function qrRead() {
                 // msg.classList.add('hidden');
                 canvas.classList.add('hidden');
                 msg.innerHTML += {
-                    data: data,
+                    event_id: data.event.id,
                     user_id: userId,
                     _token: csrfToken
                 };
