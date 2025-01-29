@@ -61,7 +61,7 @@ function qrRead() {
                 })
                     .then((response) => {
                         console.log(response.data);
-                        if (response.data.check === 'ok') {
+                        if (response.data.check) {
                             dataBox.classList.remove('hidden');
                             eventName.innerHTML = response.data.event.name;
                             eventDate.innerHTML = response.data.event.date;
@@ -72,7 +72,6 @@ function qrRead() {
                             entryId.value = response.data.entry_id;
                         } else {
                             msg.innerHTML = '参加申し込みが見つかりませんでした。' + response.data;
-                            setTimeout(startTick, 10);
                         }
                     })
                     .catch((error) => {
