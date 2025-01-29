@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 class EventRegisterController extends Controller
 {
     public function show() {
-        return view('event.register.issue');
+        return view('event.register.show');
     }
 
     public function store(Request $request) {
