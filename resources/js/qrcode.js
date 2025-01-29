@@ -61,7 +61,7 @@ function qrRead() {
                 })
                     .then((response) => {
                         console.log(response.data);
-                        if (response.data.check) {
+                        if (response.data.check === 'ok') {
                             dataBox.classList.remove('hidden');
                             eventName.innerHTML = response.data.event.name;
                             eventDate.innerHTML = response.data.event.date;
