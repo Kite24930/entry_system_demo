@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Entry;
 use App\Models\EntryView;
+use App\Models\Event;
 use Illuminate\Http\Request;
 
 class EntryQrcodeController extends Controller
@@ -13,13 +14,13 @@ class EntryQrcodeController extends Controller
     }
 
     public function check(Request $request) {
-        $event = Entry::find($request->event_id);
+        $event = Event::find($request->event_id);
         $entry = EntryView::where('event_id', $request->event_id)->where('user_id', $request->user_id)->first();
         $check = false;
         if ($entry) {
             $check = true;
         }
-        return ['check' => $check, 'event' => $event, 'entry_id' => $entry->id];
+        return ['check' => $check, 'event' => $event, 'entry' => $entry, 'entry_id' => $entry->id];
     }
 
     public function store(Request $request) {
