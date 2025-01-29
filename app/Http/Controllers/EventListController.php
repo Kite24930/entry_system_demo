@@ -9,7 +9,7 @@ use Illuminate\Http\Request;
 class EventListController extends Controller
 {
     public function show() {
-        $events = Event::orderBy('date', 'desc')->get();
+        $events = Event::orderBy('date')->get();
         return view('event.list.show', compact('events'));
     }
 
