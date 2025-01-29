@@ -71,7 +71,7 @@ function qrRead() {
                             eventId.value = response.data.event.id;
                             entryId.value = response.data.entry_id;
                         } else {
-                            msg.innerHTML = '参加申し込みが見つかりませんでした。';
+                            msg.innerHTML = '参加申し込みが見つかりませんでした。' + response.data;
                             setTimeout(startTick, 10);
                         }
                     })
