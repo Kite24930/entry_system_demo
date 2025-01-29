@@ -13,9 +13,13 @@ class EntryQrcodeController extends Controller
     }
 
     public function check(Request $request) {
-        $event = Entry::find($request->data->event->id);
-        $entry = EntryView::where('event_id', $event->id)->where('user_id', $request->user_id)->first();
-        return ['check' => 'ok', 'event' => $event, 'entry_id' => $entry->id];
+        $event = Entry::find($request->event_id);
+        $entry = EntryView::where('event_id', $request->event_id)->where('user_id', $request->user_id)->first();
+        $check = false;
+        if ($entry) {
+            $check = true;
+        }
+        return ['check' => $check, 'event' => $event, 'entry_id' => $entry->id];
     }
 
     public function store(Request $request) {
