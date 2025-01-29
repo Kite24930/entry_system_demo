@@ -54,13 +54,8 @@ function qrRead() {
                 drawRect(code.location);
                 // msg.classList.add('hidden');
                 canvas.classList.add('hidden');
-                msg.innerHTML += {
-                    event_id: data.event.id,
-                    user_id: userId,
-                    _token: csrfToken
-                };
                 axios.post('/entry/admission/success', {
-                    data: data,
+                    event_id: data.event.id,
                     user_id: userId,
                     _token: csrfToken
                 })
