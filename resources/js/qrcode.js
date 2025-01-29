@@ -45,8 +45,8 @@ function qrRead() {
                 inversionAttempts: "dontInvert",
             });
             if (code) {
-                // msg.innerHTML = code.data;
-                // msg.innerHTML = '読み取り完了';
+                msg.innerHTML = code.data;
+                msg.innerHTML += '読み取り完了';
                 let data = JSON.parse(code.data);
                 console.log(data);
                 video.pause();
@@ -54,7 +54,7 @@ function qrRead() {
                 drawRect(code.location);
                 // msg.classList.add('hidden');
                 canvas.classList.add('hidden');
-                msg.innerHTML = {
+                msg.innerHTML += {
                     data: data,
                     user_id: userId,
                     _token: csrfToken
@@ -82,7 +82,7 @@ function qrRead() {
                     })
                     .catch((error) => {
                         console.error(error);
-                        msg.innerHTML = error;
+                        msg.innerHTML += error;
                     });
             } else {
                 msg.innerHTML = 'QRコードが見つかりませんでした。';
