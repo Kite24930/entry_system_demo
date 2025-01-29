@@ -80,7 +80,7 @@ function qrRead() {
                         msg.innerHTML += error;
                     });
             } else {
-                msg.innerHTML = 'QRコードが見つかりませんでした。';
+                // msg.innerHTML = 'QRコードが見つかりませんでした。';
                 setTimeout(startTick, 10);
             }
         }
