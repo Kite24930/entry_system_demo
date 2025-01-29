@@ -48,7 +48,7 @@
 
                         <!-- Event Admission -->
                         <div class="w-full max-w-xl flex justify-center">
-                            <form action="{{ route('admission.store') }}">
+                            <form action="{{ route('admission.store') }}" method="POST">
                                 @csrf
                                 <input type="hidden" name="event_id" id="event-id">
                                 <input type="hidden" name="entry_id" id="entry-id">
