@@ -75,7 +75,7 @@ function qrRead() {
                             UeerBelong.innerHTML = response.data.entry.user_belong_to;
                             UserPost.innerHTML = response.data.entry.user_post;
                             eventId.value = response.data.event.id;
-                            entryId.value = response.data.entry.id;
+                            entryId.value = response.data.entry.entry_id;
                             msg.classList.add('hidden');
                         } else {
                             msg.innerHTML = '参加申し込みが見つかりませんでした。';
