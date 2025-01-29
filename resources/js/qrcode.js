@@ -35,6 +35,7 @@ function qrRead() {
 
     function startTick() {
         msg.innerHTML = '読み取り中...';
+        console.log('読み取り開始');
         if (video.readyState === video.HAVE_ENOUGH_DATA) {
             canvas.height = video.videoHeight;
             canvas.width = video.videoWidth;
