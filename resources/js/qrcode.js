@@ -45,6 +45,7 @@ function qrRead() {
             });
             if (code) {
                 // msg.innerHTML = code.data;
+                msg.innerHTML = '読み取り完了';
                 let data = JSON.parse(code.data);
                 console.log(data);
                 video.pause();
